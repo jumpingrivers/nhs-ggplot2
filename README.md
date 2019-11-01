@@ -7,7 +7,7 @@
 * Run the `install.packages()` command to install ggplot2
 
 ```
-install.pacakges("ggplot2")
+install.packages("ggplot2")
 ```
 
 * Try using the library command to check it installed correctly.
