@@ -5,8 +5,8 @@
 .Rapp.history
 
 # Slides
+README.html
 libs/
-*.html
 style.css
 slides_files
 slides_cache
