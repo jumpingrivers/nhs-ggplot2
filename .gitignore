@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.Rapp.history
+
+# Slides
+libs/
+*.html
+style.css
+slides_files
+slides_cache
+
+#Practicals
+practicals/*.log
+practicals/practical*_files
+practicals/practical*_cache
