@@ -24,4 +24,4 @@ library("ggplot2")
 
 * Unzip the folder on your computer
 
-Let's go! ::rocket::
+Let's go! :rocket:
