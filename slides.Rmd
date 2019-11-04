@@ -208,7 +208,7 @@ b + labs(x = "Movie classification",
          y = "User rating (1-10)", 
          title = "Movie ratings conditional on classification", 
          subtitle = "Data collected from the IMDB", 
-         caption = "These boxplots represent etc etc")
+         caption = "These box plots represent etc etc")
 ```
 
 ---
@@ -425,7 +425,7 @@ background-size: cover
 
 * Remember the `+`
 
-* Are you plotting something sensible (is your data catergorial?)
+* Are you plotting something sensible (is your data categorical?)
 
 * Try manipulating your data **before** plotting it
 
