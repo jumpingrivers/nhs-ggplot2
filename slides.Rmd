@@ -168,6 +168,31 @@ ggplot(movies, aes(x = classification)) +
 ```
 
 ---
+class: center, middle, inverse
+background-image: url(assets/white_logo.png)
+background-size: cover
+
+# Quick Quiz!
+
+---
+
+# Spot the mistakes
+
+Sarah is trying to recreate the following plot, but her code doesn't work
+
+```{r, echo = FALSE, out.width = "50%"}
+ggplot(movies, aes(x = votes, y = rating)) +
+  geom_point()
+```
+
+Spot three errors in her code and think about how you would fix them.
+
+```{r, eval = FALSE}
+ggplot(data = movies, x = votes, y = rating) %>%
+  geom_scatter()
+```
+
+---
 
 # Histograms
 
@@ -188,17 +213,21 @@ ggplot(movies, aes(x = duration)) + geom_histogram(binwidth = 10)
 * Top and bottom of the box represents the lower and upper quartiles
 
 
-```{r }
-(b = ggplot(movies, aes(x = classification, y = rating)) + 
-   geom_boxplot())
+```{r}
+boxplot = ggplot(movies, aes(x = classification, y = rating)) + 
+   geom_boxplot()
+```
+
+```{r, echo = FALSE}
+boxplot
 ```
 
 ---
 
 # Titles and legends
 
-```{r labels, fig.margin = TRUE, fig.cap = "A boxplot graph with informative labels."}
-b + labs(x = "Movie classification", 
+```{r}
+boxplot + labs(x = "Movie classification", 
          y = "User rating (1-10)", 
          title = "Movie ratings conditional on classification", 
          subtitle = "Data collected from the IMDB", 
@@ -258,7 +287,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 
 ---
 
-# Aesthetics
+# Colours
 
 ```{r}
 ggplot(movies, aes(x = duration, y = rating)) + 
@@ -267,7 +296,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 
 ---
 
-# Aesthetics
+# Colours
 
 ```{r}
 ggplot(movies, aes(x = duration, y = rating)) + 
@@ -276,7 +305,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 
 ---
 
-# Aesthetics
+# Colours
 
 ```{r}
 ggplot(movies, aes(x = duration, y = rating)) + 
@@ -331,6 +360,32 @@ ggplot(movies, aes(x = duration, y = rating)) +
   {{geom_point(aes(shape = classification), size = 3)}}
 ``` 
 
+
+---
+class: center, middle, inverse
+background-image: url(assets/white_logo.png)
+background-size: cover
+
+# Quick Quiz!
+
+---
+
+# Fill in the blanks
+
+```{r, eval = FALSE}
+ggplot(movies, aes(x = year, y = rating)) + 
+  geom_point(aes(___ = classification,
+                 size = ___),
+             ___ = 0.3) 
+```
+
+
+```{r, echo = FALSE}
+ggplot(movies, aes(x = year, y = rating)) + 
+         geom_point(aes(colour= classification, size = votes), alpha = 0.3) 
+```
+
+
 ---
 
 # Facets - mini plots!
@@ -352,7 +407,7 @@ g = ggplot(bond, aes(Kills, Alcohol_Units)) +
   theme_bw() 
 ```
  * Quick and easy way to add style to your plots.
- * Eight in-built themes with **ggplot2**
+ * Eight in-built themes with {ggplot2}
  
 ```{r}
 ggplot(bond, aes(Kills, Alcohol_Units)) + 
@@ -362,7 +417,7 @@ ggplot(bond, aes(Kills, Alcohol_Units)) +
 
 ---
 
-# Other themes: ggthemes
+# Other themes: {ggthemes}
 
 ```{r, fig.keep="none"}
 library("ggthemes")
@@ -379,7 +434,7 @@ gridExtra::grid.arrange(
 
 ---
 
-# Other themes: hrbrthemes
+# Other themes: {hrbrthemes}
 
 See https://github.com/hrbrmstr/hrbrthemes
 
@@ -404,7 +459,7 @@ gridExtra::grid.arrange(g, g1, ncol = 2)
 
 # Other themes: {tvthemes}
 
-You can even style your plot based on yout favourite TV show with [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+You can even style your plot based on your favourite TV show with [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
 
 <center>
 <img src="assets/simpsons.png" width = 600></img>

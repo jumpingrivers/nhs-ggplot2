@@ -8,10 +8,6 @@ output:
     fig_width: 4
     fig_height: 4
   tufte::tufte_html: default
-vignette: >
-  %\VignetteIndexEntry{Practical 1}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
 ---
 
 ```{r include = FALSE}
@@ -38,7 +34,7 @@ bond = readRDS(file = "../data/bond.rds")
 
 Let's start with a basic scatter plot
 
-```{r,fig.keep='none', echo = TRUE}
+```{r,fig.keep='none', echo = TRUE, tidy = FALSE}
 ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) +
   geom_point()
 ```
@@ -48,14 +44,14 @@ these parameters are required. This particular geom has other aesthetics:
 `shape`, `colour`, `size` and `alpha`.^[These aesthetics are
   usually available for most geoms.] Experiment with other aesthetics. For example,
 
-```{r,fig.keep='none', echo = TRUE}
+```{r,fig.keep='none', echo = TRUE, tidy = FALSE}
 ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) +
   geom_point(aes(colour = Actor))
 ```
 
 \noindent or
 
-```{r,fig.keep='none', tidy=FALSE, cache=TRUE, echo = TRUE}
+```{r,fig.keep='none', tidy=FALSE, cache=TRUE, echo = TRUE, tidy = FALSE}
 ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) +
   geom_point(aes(colour = Actor,
                  shape = Nationality),
@@ -68,7 +64,6 @@ ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) +
 
 * Otherwise, define it **outside** `aes()`. E.g. `geom_point(colour = "red", size = 2)`
 
-
 Some aesthetics, like `shape` must be discrete.  If you try and use `shape = Relationships` you'll get an error. 
     
 - What happens if you colour the points by `Relationships`?
@@ -80,7 +75,7 @@ ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) +
    
 ## Combining plots
 
-The key idea with **ggplot2** is to think in terms of layers not in terms of plot "types". For example,
+The key idea with {ggplot2} is to think in terms of layers not in terms of plot "types". For example,
 
 ```{r,fig.keep='none', tidy=FALSE, echo = TRUE}
 ggplot(bond, aes(x = Actor, y = Kills, colour = Nationality)) +
@@ -160,7 +155,7 @@ The in-built options are:
 * `theme_minimal()` – no background annotations, minimal feel.
 * `theme_classic()` – theme with no grid lines.
 * `theme_void()` – empty theme with no elements
-
+x
 For example:
 
 ```{r movies, echo = FALSE}
@@ -169,7 +164,7 @@ movies = readRDS(file = "../data/movies.rds")
 
 ```{r themes, fig.keep='none', echo = TRUE}
 ggplot(movies, aes(x = duration)) +
-  
+
     geom_density(aes(fill = classification),
                  alpha = 0.5) + 
     theme_bw()

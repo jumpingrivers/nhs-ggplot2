@@ -8,16 +8,7 @@ output:
     fig_width: 4
     fig_height: 4
   tufte::tufte_html: default
-vignette: >
-  %\VignetteIndexEntry{Practical 1}
-  %\VignetteEngine{knitr::rmarkdown}
-  \usepackage[utf8]{inputenc}
 ---
-
-```{r include = FALSE}
-library(tufte)
-knitr::opts_chunk$set(results = "hide", echo = FALSE, cache = FALSE)
-```
 
 We will continue to investigate the movies data set.
 
@@ -34,15 +25,9 @@ library("ggplot2")
 movies = readRDS(file = "data/movies.rds")
 ```
 
-```{r, echo = FALSE, eval = TRUE}
-library("ggplot2")
-movies = readRDS(file = "../data/movies.rds")
-```
-
-
 \noindent When loading in data, it's always a good idea to carry out a sanity check. I tend to use the commands
 
-```{r,results='hide', echo = TRUE}
+```{r,results='hide', echo = TRUE, eval = FALSE}
 head(movies)
 names(movies)
 dim(movies)
@@ -53,73 +38,82 @@ View(movies)
 
 (1) Make a basic scatter plot with votes on the x axis and rating on the y axis. Remember, we use the `ggplot()` function to create a basic plot and them `geom_point()` to add points.
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = FALSE}
 g = ggplot(movies, aes(x = votes, y = rating)) + 
-  
-    geom_point()
+  geom_point()
 ```
 
 (1) Use the `labs()` function to change the axis labels & and title to something better
 
-    ```{r, eval = FALSE}
-    g + labs(x = "No of Votes", 
-             y = "Average IMDB Rating", 
-             title = "No of Votes vs Average IMDB Rating")
-    ```
+```{r, eval = FALSE, echo = FALSE}
+g + labs(x = "No of Votes",
+         y = "Average IMDB Rating", 
+         title = "No of Votes vs Average IMDB Rating")
+```
 
 (1) The range of possible ratings is between 0 and 10, however because the maximum rating is below 10 the y-axis stops before 10. We can change the axis range using the `ylim` function. For instance, if our graph was stored in an object `g`, we could change the y-axis limit to (0,10) like so ` + ylim(0, 10)`.
 
 Do this to your graph.
 
+```{r, eval = FALSE, echo = FALSE}
+g + ylim(0,10)
+```
+
+
 ## Histograms
 
 (1) Make a basic histogram of the year of releases. 
 
-    ```{r, eval = FALSE}
-    ggplot(movies, aes(x = year)) +
-      
-        geom_histogram()
-    ```
-    
+```{r, eval = FALSE, echo = FALSE}
+ggplot(movies, aes(x = year)) +
+  geom_histogram()
+```
+
 (1) Change the binwidth to one year using the `binwidth` argument in `geom_histogram()`
 
-    ```{r, eval = FALSE}
-    ggplot(movies, aes(x = year)) + 
-      
-        geom_histogram(binwidth = 1)
-    ```
-    
+```{r, eval = FALSE, echo = FALSE}
+ggplot(movies, aes(x = year)) + 
+  geom_histogram(binwidth = 1)
+```
+
 (1)  Try changing `geom_histogram()` to `geom_density()`. You won't need a binwidth argument for the density plot. 
+
+```{r, eval = FALSE, echo = FALSE}
+ggplot(movies, aes(x = year)) + 
+  geom_density()
+```
 
 # Bonus questions - an introduction to colours and fills
 
 Let's go back to the classification bar chart we had in the slides.
 
 ```{r, eval = FALSE, echo = TRUE}
-    ggplot(movies, aes(x = classification)) + 
-  
-    geom_bar()
+ggplot(movies, aes(x = classification)) + 
+  geom_bar()
 ```
-    
+
 (1) Inside the `geom_bar()` function, try adding the argument `colour = "blue"`. What happens?
 
-    ```{r, eval = FALSE, echo = TRUE}
-    ggplot(movies, aes(x = classification)) +
-      
-        geom_bar(colour = "blue")
-    ```
-    
+```{r, eval = FALSE, echo = TRUE}
+ggplot(movies, aes(x = classification)) +
+  geom_bar(colour = "blue")
+```
+<!-- It colours the outline blue-->
+
 (1) Change `colour = "blue"` to `fill = "blue"`
 
+<!-- It fills the bars in blue-->
+
 (1) Experiment with other colours, you can find a list of colours that R takes using the `colours()` function i.e. run 
-    ```{r, eval = FALSE, echo = TRUE}
-    colours()
-    ```
+```{r, eval = FALSE, echo = TRUE}
+colours()
+```
 
 (1) Remove `fill = "blue"` from `geom_bar()`. Now try adding `fill = classification` to the `aes()` function. What happens?
-    
-    ```{r, eval = FALSE, echo = TRUE}
-    ggplot(movies, aes(x = classification)) +
-      
-        geom_bar(aes(fill = classification))
-    ```
+
+```{r, eval = FALSE, echo = TRUE}
+ggplot(movies, aes(x = classification)) +
+  geom_bar(aes(fill = classification))
+```
+
+<!-- It fills the bars in based on the variable classification-->

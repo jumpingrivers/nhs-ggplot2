@@ -198,6 +198,29 @@ ggplot(movies, aes(x = classification)) +
 &lt;img src="slides_files/figure-html/unnamed-chunk-5-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
+class: center, middle, inverse
+background-image: url(assets/white_logo.png)
+background-size: cover
+
+# Quick Quiz!
+
+---
+
+# Spot the mistakes
+
+Sarah is trying to recreate the following plot, but her code doesn't work
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-6-1.svg" width="50%" style="display: block; margin: auto;" /&gt;
+
+Spot three errors in her code and think about how you would fix them.
+
+
+```r
+ggplot(data = movies, x = votes, y = rating) %&gt;%
+  geom_scatter()
+```
+
+---
 
 # Histograms
 
@@ -210,7 +233,7 @@ ggplot(movies, aes(x = classification)) +
 ggplot(movies, aes(x = duration)) + geom_histogram(binwidth = 10)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-6-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-8-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -223,11 +246,11 @@ ggplot(movies, aes(x = duration)) + geom_histogram(binwidth = 10)
 
 
 ```r
-(b = ggplot(movies, aes(x = classification, y = rating)) + 
-   geom_boxplot())
+boxplot = ggplot(movies, aes(x = classification, y = rating)) + 
+   geom_boxplot()
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-7-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-10-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -235,17 +258,14 @@ ggplot(movies, aes(x = duration)) + geom_histogram(binwidth = 10)
 
 
 ```r
-b + labs(x = "Movie classification", 
+boxplot + labs(x = "Movie classification", 
          y = "User rating (1-10)", 
          title = "Movie ratings conditional on classification", 
          subtitle = "Data collected from the IMDB", 
          caption = "These box plots represent etc etc")
 ```
 
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="slides_files/figure-html/labels-1.svg" alt="A boxplot graph with informative labels." width="70%" /&gt;
-&lt;p class="caption"&gt;A boxplot graph with informative labels.&lt;/p&gt;
-&lt;/div&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-11-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -313,7 +333,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(aes(colour = duration)) 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-8-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-12-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -325,7 +345,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(aes(colour = classification)) 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-9-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-13-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -337,7 +357,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(aes(colour = "Blue")) 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-10-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-14-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -349,7 +369,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(colour = "Blue") 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-11-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-15-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -379,7 +399,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *  geom_point(shape = 9, size = 3)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-12-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-16-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -391,7 +411,31 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *  geom_point(aes(shape = classification), size = 3)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-13-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-17-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+---
+class: center, middle, inverse
+background-image: url(assets/white_logo.png)
+background-size: cover
+
+# Quick Quiz!
+
+---
+
+# Fill in the blanks
+
+
+```r
+ggplot(movies, aes(x = year, y = rating)) + 
+  geom_point(aes(___ = classification,
+                 size = ___),
+             ___ = 0.3) 
+```
+
+
+&lt;img src="slides_files/figure-html/unnamed-chunk-19-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 
@@ -404,7 +448,7 @@ ggplot(movies, aes(x = duration)) +
   facet_wrap(~classification)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-14-1.svg" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-20-1.svg" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -412,7 +456,7 @@ ggplot(movies, aes(x = duration)) +
 
 
  * Quick and easy way to add style to your plots.
- * Eight in-built themes with **ggplot2**
+ * Eight in-built themes with {ggplot2}
  
 
 ```r
@@ -421,7 +465,7 @@ ggplot(bond, aes(Kills, Alcohol_Units)) +
   theme_bw() 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-16-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-22-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -434,7 +478,7 @@ g + theme_excel() + scale_colour_excel()
 g + theme_minimal() + scale_color_ptol()
 g + theme_hc() + scale_colour_hc()
 ```
-&lt;img src="slides_files/figure-html/unnamed-chunk-18-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-24-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -444,13 +488,13 @@ See https://github.com/hrbrmstr/hrbrthemes
 
 
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-20-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-26-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 # Other themes: {tvthemes}
 
-You can even style your plot based on yout favourite TV show with [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+You can even style your plot based on your favourite TV show with [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
 
 &lt;center&gt;
 &lt;img src="assets/simpsons.png" width = 600&gt;&lt;/img&gt;
