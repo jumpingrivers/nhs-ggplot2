@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Graphics with ggplot2 📊</title>
     <meta charset="utf-8" />
     <meta name="author" content="Rhian Davies (@trianglegirl)" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/countdown/countdown.css" rel="stylesheet" />
-    <script src="libs/countdown/countdown.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
   <body>
@@ -14,7 +13,7 @@
 class: center, middle, inverse, title-slide
 
 # Graphics with ggplot2 📊
-## NHS R Conference 2019
+## NHS R Conference 2020
 ### Rhian Davies (<a href="https://twitter.com/trianglegirl">@trianglegirl</a>)
 
 ---
@@ -30,23 +29,17 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2019 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 
-# Introduction to ggplot2
+# Introduction to {ggplot2}
 
 * http://bit.ly/nhs-ggplot2
-
-* We'll start when the timer runs out
 
 .center[
 &lt;img src="assets/graphics.jpg" width = 400&gt;&lt;/img&gt;
 ]
-
-<div class="countdown" id="timer_5dbffd3b" style="right:0;bottom:0;" data-warnwhen="0">
-<code class="countdown-time"><span class="countdown-digits minutes">04</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">30</span></code>
-</div>
 
 ---
 
@@ -58,7 +51,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2019 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 background-image: url(assets/white_logo.png)
@@ -76,7 +69,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2019 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 
@@ -123,13 +116,13 @@ layout: true
 
 # Introduction
 
-*  Many different ways to make graphs in R
+*  _Many_ different ways to make graphs in R
 
-* **ggplot2** started in 2005 and follows the "Grammar of Graphics" 
+* {ggplot2} started in 2005 and follows the "Grammar of Graphics" 
 
-* Many companies have adopted **ggplot2** for graphics, including the [BBC](https://bbc.github.io/rcookbook/)
+* Many companies have adopted {ggplot2} for graphics, including the [BBC](https://bbc.github.io/rcookbook/) and the [FT](https://twitter.com/jburnmurdoch)
 
-* Think about graphics in terms of "layers"
+* Think about graphics in terms of [layers](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html)
 
 .center[
 &lt;img src="assets/canvas.jpg" width=400&gt;&lt;/img&gt;
@@ -151,7 +144,7 @@ library("ggplot2")
 
 * __data__: this must be a data frame (or tibble)
 
-* an aesthetic __mapping__: this tells ggplot2 how to map data to the graphical elements
+* an aesthetic __mapping__: this tells {ggplot2} how to map data to the graphical elements
 
 ---
 
@@ -187,7 +180,7 @@ h = ggplot(movies, aes(x = duration, y = rating))
 h + geom_point()
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-5-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-4-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -202,7 +195,7 @@ ggplot(movies, aes(x = classification)) +
   geom_bar()
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-6-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-5-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -217,7 +210,7 @@ ggplot(movies, aes(x = classification)) +
 ggplot(movies, aes(x = duration)) + geom_histogram(binwidth = 10)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-7-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-6-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -234,7 +227,7 @@ ggplot(movies, aes(x = duration)) + geom_histogram(binwidth = 10)
    geom_boxplot())
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-8-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-7-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -273,7 +266,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer-inverse"&gt;&lt;span&gt;&amp;copy; 2019 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer-inverse"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 
@@ -292,7 +285,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2019 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 ---
 
 # Aesthetics
@@ -320,7 +313,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(aes(colour = duration)) 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-9-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-8-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -332,7 +325,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(aes(colour = classification)) 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-10-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-9-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -344,7 +337,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(aes(colour = "Blue")) 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-11-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-10-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -356,7 +349,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *    geom_point(colour = "Blue") 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-12-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-11-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -386,7 +379,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *  geom_point(shape = 9, size = 3)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-13-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-12-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -398,7 +391,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 *  geom_point(aes(shape = classification), size = 3)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-14-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-13-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -411,7 +404,7 @@ ggplot(movies, aes(x = duration)) +
   facet_wrap(~classification)
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-15-1.svg" width="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-14-1.svg" width="90%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -428,7 +421,7 @@ ggplot(bond, aes(Kills, Alcohol_Units)) +
   theme_bw() 
 ```
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-17-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-16-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -441,7 +434,7 @@ g + theme_excel() + scale_colour_excel()
 g + theme_minimal() + scale_color_ptol()
 g + theme_hc() + scale_colour_hc()
 ```
-&lt;img src="slides_files/figure-html/unnamed-chunk-19-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-18-1.svg" width="70%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -451,7 +444,17 @@ See https://github.com/hrbrmstr/hrbrthemes
 
 
 
-&lt;img src="slides_files/figure-html/unnamed-chunk-21-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="slides_files/figure-html/unnamed-chunk-20-1.svg" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+# Other themes: {tvthemes}
+
+You can even style your plot based on yout favourite TV show with [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+
+&lt;center&gt;
+&lt;img src="assets/simpsons.png" width = 600&gt;&lt;/img&gt;
+&lt;/center&gt;
 
 ---
 class: center, middle, inverse
@@ -464,7 +467,7 @@ background-size: cover
 
 # Top troubleshooting tips 💁
 
-* **ggplot2** is the 📦,  `ggplot()` is the function
+* {ggplot2} is the 📦,  `ggplot()` is the function
 
 * `colour = "blue"` vs `aes(colour = gender)`
 
@@ -484,17 +487,19 @@ background-size: cover
 
 * [R4DS book chapter 3](https://r4ds.had.co.nz/data-visualisation.html)
 * [R graphics cookbook](http://www.cookbook-r.com/Graphs/)
-* [RStudio ggplot2 cheatsheet](https://rstudio.com/resources/cheatsheets/)
+* [RStudio {ggplot2} cheatsheet](https://rstudio.com/resources/cheatsheets/)
 * [#TidyTuesday](https://github.com/rfordatascience/tidytuesday)
 * [Our training courses](https://www.jumpingrivers.com/training/all-courses/)
 
 Share any cool plots you make on twitter!
 
-@jumping_uk @trianglegirl #NHSR #NHSRconf2019
+@jumping_uk @trianglegirl #NHSR #NHSRconf2020
 
 &lt;center&gt;
 &lt;img src="assets/graphics.jpg" width = 300&gt;&lt;/img&gt;
 &lt;/center&gt;
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -542,6 +547,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -559,17 +590,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {

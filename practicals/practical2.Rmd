@@ -49,7 +49,7 @@ these parameters are required. This particular geom has other aesthetics:
   usually available for most geoms.] Experiment with other aesthetics. For example,
 
 ```{r,fig.keep='none', echo = TRUE}
-ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) 
+ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) +
   geom_point(aes(colour = Actor))
 ```
 
@@ -74,7 +74,7 @@ Some aesthetics, like `shape` must be discrete.  If you try and use `shape = Rel
 - What happens if you colour the points by `Relationships`?
 
 ```{r,fig.keep='none', tidy=FALSE, cache=TRUE, echo = TRUE}
-ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) 
+ggplot(data = bond, aes(x = Kills, y = Alcohol_Units)) +
   geom_point(aes(colour = Relationships))
 ```
    

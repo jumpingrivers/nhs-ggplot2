@@ -1,6 +1,6 @@
 ---
 title: Graphics with ggplot2 `r emo::ji('bar_chart')`
-subtitle: "NHS R Conference 2019"
+subtitle: "NHS R Conference 2020"
 author: '`r jrPresentation::get_author()`'
 output:
   xaringan::moon_reader:
@@ -26,19 +26,13 @@ layout:true
 
 ---
 
-# Introduction to ggplot2
+# Introduction to {ggplot2}
 
 * http://bit.ly/nhs-ggplot2
-
-* We'll start when the timer runs out
 
 .center[
 <img src="assets/graphics.jpg" width = 400></img>
 ]
-
-```{r, echo = FALSE}
-countdown::countdown(minutes = 4, seconds = 30)  
-```
 
 ---
 
@@ -101,13 +95,13 @@ layout: true
 
 # Introduction
 
-*  Many different ways to make graphs in R
+*  _Many_ different ways to make graphs in R
 
-* **ggplot2** started in 2005 and follows the "Grammar of Graphics" 
+* {ggplot2} started in 2005 and follows the "Grammar of Graphics" 
 
-* Many companies have adopted **ggplot2** for graphics, including the [BBC](https://bbc.github.io/rcookbook/)
+* Many companies have adopted {ggplot2} for graphics, including the [BBC](https://bbc.github.io/rcookbook/) and the [FT](https://twitter.com/jburnmurdoch)
 
-* Think about graphics in terms of "layers"
+* Think about graphics in terms of [layers](https://evamaerey.github.io/ggplot_flipbook/ggplot_flipbook_xaringan.html)
 
 .center[
 <img src="assets/canvas.jpg" width=400></img>
@@ -128,7 +122,7 @@ library("ggplot2")
 
 * __data__: this must be a data frame (or tibble)
 
-* an aesthetic __mapping__: this tells ggplot2 how to map data to the graphical elements
+* an aesthetic __mapping__: this tells {ggplot2} how to map data to the graphical elements
 
 ---
 
@@ -407,6 +401,16 @@ gridExtra::grid.arrange(g, g1, ncol = 2)
 ```
 
 ---
+
+# Other themes: {tvthemes}
+
+You can even style your plot based on yout favourite TV show with [{tvthemes}](https://ryo-n7.github.io/2019-05-16-introducing-tvthemes-package/)
+
+<center>
+<img src="assets/simpsons.png" width = 600></img>
+</center>
+
+---
 class: center, middle, inverse
 background-image: url(assets/white_logo.png)
 background-size: cover
@@ -417,7 +421,7 @@ background-size: cover
 
 # Top troubleshooting tips `r emo::ji("tipping_hand_woman")`
 
-* **ggplot2** is the `r emo::ji("package")`,  `ggplot()` is the function
+* {ggplot2} is the `r emo::ji("package")`,  `ggplot()` is the function
 
 * `colour = "blue"` vs `aes(colour = gender)`
 
@@ -437,13 +441,13 @@ background-size: cover
 
 * [R4DS book chapter 3](https://r4ds.had.co.nz/data-visualisation.html)
 * [R graphics cookbook](http://www.cookbook-r.com/Graphs/)
-* [RStudio ggplot2 cheatsheet](https://rstudio.com/resources/cheatsheets/)
+* [RStudio {ggplot2} cheatsheet](https://rstudio.com/resources/cheatsheets/)
 * [#TidyTuesday](https://github.com/rfordatascience/tidytuesday)
 * [Our training courses](https://www.jumpingrivers.com/training/all-courses/)
 
 Share any cool plots you make on twitter!
 
-@jumping_uk @trianglegirl #NHSR #NHSRconf2019
+@jumping_uk @trianglegirl #NHSR #NHSRconf2020
 
 <center>
 <img src="assets/graphics.jpg" width = 300></img>
