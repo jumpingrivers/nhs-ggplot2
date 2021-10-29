@@ -3,8 +3,7 @@
   <head>
     <title>Graphics with ggplot2 📊</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Rhian Davies (@trianglegirl)" />
-    <script src="libs/header-attrs/header-attrs.js"></script>
+    <meta name="author" content="John McIntyre" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" type="text/css" />
   </head>
@@ -14,7 +13,7 @@ class: center, middle, inverse, title-slide
 
 # Graphics with ggplot2 📊
 ## NHS R Conference 2020
-### Rhian Davies (<a href="https://twitter.com/trianglegirl">@trianglegirl</a>)
+### John McIntyre
 
 ---
 
@@ -29,7 +28,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2021 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 
@@ -51,7 +50,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2021 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 background-image: url(assets/white_logo.png)
@@ -69,7 +68,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2021 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 
@@ -286,7 +285,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer-inverse"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer-inverse"&gt;&lt;span&gt;&amp;copy; 2021 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 
 ---
 
@@ -305,7 +304,7 @@ layout: true
         &lt;span class="social"&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;&lt;img src="assets/twitter.gif"/&gt;&lt;/td&gt;&lt;td&gt; @jumping_uk&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/span&gt;
       &lt;/div&gt;
       
-&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2020 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
+&lt;div class="jr-footer"&gt;&lt;span&gt;&amp;copy; 2021 Jumping Rivers (jumpingrivers.com)&lt;/span&gt;&lt;div&gt;http://bit.ly/nhs-ggplot2&lt;/div&gt;&lt;/div&gt;
 ---
 
 # Aesthetics
@@ -337,7 +336,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 
 ---
 
-# Aesthetics
+# Colours
 
 
 ```r
@@ -349,7 +348,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 
 ---
 
-# Aesthetics
+# Colours
 
 
 ```r
@@ -361,7 +360,7 @@ ggplot(movies, aes(x = duration, y = rating)) +
 
 ---
 
-# Aesthetics
+# Colours
 
 
 ```r
@@ -455,6 +454,10 @@ ggplot(movies, aes(x = duration)) +
 # Themes
 
 
+```
+#&gt; Warning: `guides(&lt;scale&gt; = FALSE)` is deprecated. Please use `guides(&lt;scale&gt; =
+#&gt; "none")` instead.
+```
  * Quick and easy way to add style to your plots.
  * Eight in-built themes with {ggplot2}
  
@@ -469,7 +472,7 @@ ggplot(bond, aes(Kills, Alcohol_Units)) +
 
 ---
 
-# Other themes: ggthemes
+# Other themes: {ggthemes}
 
 
 ```r
@@ -482,7 +485,7 @@ g + theme_hc() + scale_colour_hc()
 
 ---
 
-# Other themes: hrbrthemes
+# Other themes: {hrbrthemes}
 
 See https://github.com/hrbrmstr/hrbrthemes
 
@@ -537,13 +540,11 @@ background-size: cover
 
 Share any cool plots you make on twitter!
 
-@jumping_uk @trianglegirl #NHSR #NHSRconf2020
+@jumping_uk #NHSR #NHSRconf2021
 
 &lt;center&gt;
 &lt;img src="assets/graphics.jpg" width = 300&gt;&lt;/img&gt;
 &lt;/center&gt;
-
-
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
